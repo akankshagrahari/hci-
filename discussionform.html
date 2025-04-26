@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Discussions - Craigslist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="discussionform.css" rel="stylesheet"></head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html"><img src="logo.png" alt="Craigslist"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-file"></i> About Us</a>
+        <a class="nav-item nav-link" href="#"><i class="fa-solid fa-user"></i> Account</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <!-- Left Section: Categories -->
+      <div class="col-lg-2" id="categoriesColumn">
+        <div class="categories-section p-3">
+          <button id="toggleCategories" class="btn btn-link w-100 text-start">
+            <i class="fa-solid fa-chevron-down"></i> Discussion Forums
+          </button>
+          <div id="categoriesContent" class="mt-2">
+            <ul class="list-group">
+              <li class="list-group-item" data-category="apple">apple</li>
+              <li class="list-group-item" data-category="arts">arts</li>
+              <li class="list-group-item" data-category="atheist">atheist</li>
+              <li class="list-group-item" data-category="autos">autos</li>
+              <li class="list-group-item" data-category="beauty">beauty</li>
+              <li class="list-group-item" data-category="bikes">bikes</li>
+              <li class="list-group-item" data-category="celebs">celebs</li>
+              <li class="list-group-item" data-category="comp">comp</li>
+              <li class="list-group-item" data-category="cosmos">cosmos</li>
+              <li class="list-group-item" data-category="diet">diet</li>
+              <li class="list-group-item" data-category="divorce">divorce</li>
+              <li class="list-group-item" data-category="dying">dying</li>
+              <li class="list-group-item" data-category="eco">eco</li>
+              <li class="list-group-item" data-category="feedback">feedbk</li>
+              <li class="list-group-item" data-category="film">film</li>
+              <li class="list-group-item" data-category="fixit">fixit</li>
+              <li class="list-group-item" data-category="food">food</li>
+              <li class="list-group-item" data-category="frugal">frugal</li>
+              <li class="list-group-item" data-category="gaming">gaming</li>
+              <li class="list-group-item" data-category="garden">garden</li>
+              <li class="list-group-item" data-category="haiku">haiku</li>
+              <li class="list-group-item" data-category="help">help</li>
+              <li class="list-group-item" data-category="history">history</li>
+              <li class="list-group-item" data-category="housing">housing</li>
+              <li class="list-group-item" data-category="jobs">jobs</li>
+              <li class="list-group-item" data-category="jokes">jokes</li>
+              <li class="list-group-item" data-category="legal">legal</li>
+              <li class="list-group-item" data-category="manners">manners</li>
+              <li class="list-group-item" data-category="marriage">marriage</li>
+              <li class="list-group-item" data-category="money">money</li>
+              <li class="list-group-item" data-category="music">music</li>
+              <li class="list-group-item" data-category="open">open</li>
+              <li class="list-group-item" data-category="parent">parent</li>
+              <li class="list-group-item" data-category="pets">pets</li>
+              <li class="list-group-item" data-category="philos">philos</li>
+              <li class="list-group-item" data-category="photo">photo</li>
+              <li class="list-group-item" data-category="politics">politics</li>
+              <li class="list-group-item" data-category="psych">psych</li>
+              <li class="list-group-item" data-category="recover">recover</li>
+              <li class="list-group-item" data-category="religion">religion</li>
+              <li class="list-group-item" data-category="rofo">rofo</li>
+              <li class="list-group-item" data-category="science">science</li>
+              <li class="list-group-item" data-category="spirit">spirit</li>
+              <li class="list-group-item" data-category="sports">sports</li>
+              <li class="list-group-item" data-category="super">super</li>
+              <li class="list-group-item" data-category="tax">tax</li>
+              <li class="list-group-item" data-category="travel">travel</li>
+              <li class="list-group-item" data-category="tv">tv</li>
+              <li class="list-group-item" data-category="vegan">vegan</li>
+              <li class="list-group-item" data-category="words">words</li>
+              <li class="list-group-item" data-category="writing">writing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section: Filters, Discussions and Forum Posting -->
+      <div class="col-lg-10" id="productsColumn">
+        <h2 id="categoryTitle">Job Discussions</h2>
+
+        <!-- Filter and Sort Section -->
+        <div class="filter-sort-section p-4 mb-4">
+          <div class="filter-header">
+            <h4>Filters</h4>
+            <button id="toggleFilters" class="btn btn-link">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+          <div id="filtersContent">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="sortBy">Sort By</label>
+                <select id="sortBy" class="form-select">
+                  <option value="recent">Recent</option>
+                  <option value="oldest">Oldest</option>
+                  <option value="mostPopular">Most Popular</option>
+                </select>
+              </div>
+            </div>
+          </div>
+       
+          <!-- Search Box -->
+          <div class="mt-3">
+            <label for="discussionSearch">Search Topics:</label>
+            <input type="text" id="discussionSearch" class="form-control" placeholder="Search discussions...">
+          </div>
+        </div>
+  
+        <!-- Forum Post Creation Form -->
+        <div class="card mb-4 p-4">
+          <h4>Create a New Discussion</h4>
+          <form id="newThreadForm">
+            <input type="text" id="threadTitle" class="form-control my-2" placeholder="Enter thread title" required>
+            <textarea id="threadContent" class="form-control my-2" placeholder="Enter thread content" required></textarea>
+            <button type="submit" class="btn btn-primary">Post Thread</button>
+          </form>
+        </div>
+
+        <!-- Discussion Threads List -->
+        <div id="threads">
+          <!-- Threads will be dynamically added here -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center mt-4 mb-2">
+    Copyright @Craigslist
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="discussionform.js"></script>
